@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gestão Mood</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <main class="container tela-container">
+
+        <section class="tela ativa" id="login">
+            <div class="painel">
+                <h1>Gestão<br>Mood</h1>
+                <div class="caixa login-caixa">
+                    <h2>Login</h2>
+                    <form id="loginForm">
+                        <div class="campo">
+                            <label for="usuario">Email:</label>
+                            <input class="form-control" id="usuario" type="email" required>
+                        </div>
+                        <div class="campo">
+                            <label for="senha">Senha:</label>
+                            <input class="form-control" id="senha" type="password" required>
+                        </div>
+                        <div class="botoes">
+                            <button class="btn btn-light" type="reset">Cancelar</button>
+                            <button class="btn btn-light" type="submit">Avançar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="tela" id="inicio">
+            <div class="painel">
+                <h1>Gestão<br>Mood</h1>
+                <div class="caixa menu-caixa">
+                    <p class="instrucao">Bem-vindo!<br>Escolha uma opção para prosseguir:</p>
+                    <div class="menu">
+                        <button class="btn btn-light" data-tela="cliente">Cadastrar cliente</button>
+                        <button class="btn btn-light" data-tela="venda">Registrar venda</button>
+                        <button class="btn btn-light" data-tela="compra">Calcular compra</button>
+                        <button class="btn btn-light" data-tela="estoque">Consultar estoque</button>
+                    </div>
+                    <div class="botoes">
+                        <button class="btn btn-light" id="sairBtn" type="button">Sair</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tela" id="cliente">
+            <div class="painel">
+                <div class="caixa caixa-formulario">
+                    <h2>Cadastro<br>Cliente</h2>
+                    <div class="area-formulario">
+                        <p class="marca">Gestão Mood</p>
+                        <p class="instrucao">Preencha os campos corretamente:</p>
+                        <form id="clienteForm">
+                            <div class="campo">
+                                <label for="nome">Nome:</label>
+                                <input class="form-control" id="nome" required>
+                            </div>
+                            <div class="campo">
+                                <label for="email">Email:</label>
+                                <input class="form-control" id="email" type="email" required>
+                            </div>
+                            <div class="campo">
+                                <label for="endereco">Endereço:</label>
+                                <input class="form-control" id="endereco" required>
+                            </div>
+                            <div class="campo">
+                                <label for="cpf">CPF:</label>
+                                <input class="form-control" id="cpf" maxlength="14" required>
+                            </div>
+                            <div class="campo">
+                                <label for="telefone">Telefone:</label>
+                                <input class="form-control" id="telefone" maxlength="15" required>
+                            </div>
+                            <div class="botoes">
+                                <button class="btn btn-light" type="button" data-tela="inicio">Voltar</button>
+                                <button class="btn btn-light" type="submit">Cadastrar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tela" id="venda">
+            <div class="painel">
+                <div class="caixa caixa-formulario">
+                    <h2>Registrar<br>Venda</h2>
+                    <div class="area-formulario">
+                        <p class="marca">Gestão Mood</p>
+                        <form id="vendaForm">
+                            <div class="campo">
+                                <label for="valorVenda">Valor total:</label>
+                                <input class="form-control" id="valorVenda" type="number" min="0.01" step="0.01" required>
+                            </div>
+                            <div class="campo">
+                                <label for="pagamento">Pagamento:</label>
+                                <select class="form-select" id="pagamento" required>
+                                    <option value="">Selecione</option>
+                                    <option value="Pix">Pix</option>
+                                    <option value="Dinheiro">Dinheiro</option>
+                                    <option value="Cartão de débito">Cartão de débito</option>
+                                    <option value="Cartão de crédito">Cartão de crédito</option>
+                                </select>
+                            </div>
+                            <div class="campo">
+                                <label for="clienteVenda">Cliente:</label>
+                                <select class="form-select" id="clienteVenda" required>
+                                    <option value="">Selecione um cliente</option>
+                                </select>
+                            </div>
+                            <div class="campo">
+                                <label for="funcionario">Funcionário responsável:</label>
+                                <input class="form-control" id="funcionario" required>
+                            </div>
+                            <div class="botoes">
+                                <button class="btn btn-light" type="button" data-tela="inicio">Voltar</button>
+                                <button class="btn btn-light" type="submit">Concluir</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tela" id="compra">
+            <div class="painel">
+                <div class="caixa caixa-formulario">
+                    <h2>Calcular<br>Compra</h2>
+                    <div class="area-formulario">
+                        <p class="marca">Gestão Mood</p>
+                        <form id="compraForm">
+                            <div class="campo">
+                                <label for="valorCompra">Valor da compra:</label>
+                                <input class="form-control" id="valorCompra" type="number" min="0" step="0.01" required>
+                            </div>
+                            <div class="campo">
+                                <label for="desconto">Desconto (%):</label>
+                                <input class="form-control" id="desconto" type="number" min="0" max="100" step="0.1" value="0" required>
+                            </div>
+                            <div class="campo">
+                                <label for="valorFinal">Valor final:</label>
+                                <input class="form-control" id="valorFinal" readonly>
+                            </div>
+                            <div class="botoes">
+                                <button class="btn btn-light" type="button" data-tela="inicio">Voltar</button>
+                                <button class="btn btn-light" type="submit">Calcular</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tela" id="estoque">
+            <div class="painel">
+                <h1>Gestão<br>Mood</h1>
+                <div class="caixa menu-caixa estoque-caixa">
+                    <h2>Estoque</h2>
+                    <p class="instrucao">Escolha o que deseja consultar:</p>
+                    <div class="menu">
+                        <button class="btn btn-light" type="button" data-opcao="colecoes">Coleções</button>
+                        <button class="btn btn-light" type="button" data-opcao="produtos">Produtos</button>
+                        <button class="btn btn-light" type="button" data-opcao="fornecedores">Fornecedores</button>
+                        <button class="btn btn-light" type="button" data-tela="inicio">Voltar</button>
+                    </div>
+                    <div id="resultadoEstoque" class="resultado-estoque"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div class="toast" id="notificacao" role="status">
+            <div class="toast-body" id="mensagemNotificacao"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

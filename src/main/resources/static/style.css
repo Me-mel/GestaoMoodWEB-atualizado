@@ -1,0 +1,239 @@
+
+:root {
+    --fundo: #1e1e1e;
+    --creme: #ffffd5;
+    --lilas: #d4d0f0;
+    --cinza: #d5d5d5;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--fundo);
+    font-family: Arial, Helvetica, sans-serif;
+    color: #111;
+    font-size: 13px;
+}
+
+.tela-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 12px;
+}
+
+.tela {
+    display: none;
+    width: 100%;
+    max-width: 520px;
+    min-height: 390px;
+    padding: 18px;
+    background: var(--creme);
+    border: 1px solid #c6c6a9;
+}
+
+.tela.ativa {
+    display: block;
+}
+
+.painel {
+    width: 100%;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+}
+
+.painel h1 {
+    margin: 0 0 16px;
+    text-align: center;
+    font-size: 30px;
+    line-height: 1.02;
+    font-weight: 400;
+}
+
+.caixa {
+    width: 100%;
+    background: var(--lilas);
+    border: 1px solid #b4b0d4;
+    padding: 18px;
+}
+
+.caixa h2 {
+    margin: 0 0 18px;
+    text-align: center;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.login-caixa {
+    width: 82%;
+    max-width: 350px;
+    padding: 20px;
+}
+
+.login-caixa h2 {
+    margin-bottom: 25px;
+}
+
+.area-formulario {
+    width: 100%;
+    padding: 16px;
+    border-radius: 12px;
+    background: var(--cinza);
+}
+
+.marca {
+    margin: 0 0 8px;
+    font-size: 10px;
+    font-style: italic;
+}
+
+.instrucao {
+    margin: 0 0 15px;
+    text-align: center;
+    font-size: 11px;
+}
+
+.campo {
+    display: grid;
+    grid-template-columns: minmax(125px, 38%) minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.campo label {
+    text-align: left;
+    font-size: 12px;
+    line-height: 1.35;
+}
+
+.campo .form-control,
+.campo .form-select {
+    width: 100%;
+    min-width: 0;
+    min-height: 32px;
+    padding: 5px 8px;
+    border: 1px solid #999;
+    border-radius: 3px;
+    font-size: 12px;
+    background-color: #fff;
+}
+
+.botoes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.botoes .btn,
+.menu .btn {
+    min-width: 90px;
+    min-height: 32px;
+    padding: 6px 13px;
+    border: 1px solid #555;
+    border-radius: 8px;
+    background: #fff;
+    color: #111;
+    font-size: 11px;
+}
+
+.botoes .btn:hover,
+.menu .btn:hover {
+    background: #eceafa;
+}
+
+.menu-caixa {
+    max-width: 380px;
+    padding: 20px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 11px;
+}
+
+.menu .btn {
+    width: 190px;
+}
+
+.estoque-caixa {
+    max-width: 350px;
+}
+
+.estoque-caixa h2 {
+    margin-bottom: 10px;
+}
+
+#compra .campo {
+    grid-template-columns: minmax(150px, 44%) minmax(0, 1fr);
+}
+
+#compra .area-formulario {
+    padding-top: 28px;
+}
+
+#compra .campo:last-of-type {
+    margin-top: 25px;
+}
+
+.resultado-estoque {
+    margin-top: 18px;
+    max-height: 250px;
+    overflow-y: auto;
+    overflow-wrap: anywhere;
+    font-size: 12px;
+}
+
+.resultado-estoque ul {
+    padding-left: 20px;
+}
+
+.resultado-estoque li {
+    margin-bottom: 8px;
+}
+
+@media (max-width: 480px) {
+    .tela {
+        padding: 10px;
+    }
+
+    .painel {
+        padding: 5px;
+    }
+
+    .caixa {
+        padding: 12px;
+    }
+
+    .area-formulario {
+        padding: 12px;
+    }
+
+    .campo,
+    #compra .campo {
+        grid-template-columns: minmax(100px, 36%) minmax(0, 1fr);
+        gap: 8px;
+    }
+
+    .campo label {
+        font-size: 11px;
+    }
+
+    .login-caixa {
+        width: 100%;
+    }
+}
